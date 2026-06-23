@@ -55,7 +55,7 @@
       id: 3,
       title: "Greek Kit",
       description: "acho que a kit está na Grécia antiga...",
-      image: "./images/Greek-kit.png",
+      image: "./images/Greek-kit.jpeg",
       audio: "./Description-Speech/Greek.mp3",
     },
     {
@@ -83,7 +83,7 @@
       id: 7,
       title: "Business Kit",
       description: "agora kit se tornou empresária e está disposta a fechar acordos interessantes para crescer",
-      image: "./images/business-kit.png",
+      image: "./images/business-kit.jpeg",
       audio: "./Description-Speech/Businesskit.mp3",
     },
     {
@@ -160,7 +160,7 @@
       id: 18,
       title: "Kit Ringmaster",
       description: "ela virou a chefona do incrivel circo digital",
-      image: "./images/kitringmaster.png",
+      image: "./images/kitringmaster.jpeg",
       audio: "./Description-Speech/Kitringmaster.mp3",
     },
     {
@@ -218,6 +218,46 @@
       description: "Foi o primeiro rival de Sonic, mas agora é um velho amigo...",
       image: "./images/Classickunkles.jpeg",
       audio: "./Description-Speech/Ohno.mp3",
+    },
+    {
+      id: 27,
+      title: "Coolguy",
+      description: "Ceo da Master Enterprise, um homem muito capaz e inteligente, seu objetivo é claro ..fechar negócios.",
+      image: "./images/Coolguy.jpeg",
+      audio: "./Description-Speech/Coolguy.mp3",
+    },
+    {
+      id: 28,
+      title: "Classic Metal Sonic",
+      description: "Rival de Sonic... Eu acho?... nem sei mais o porque a Sega o considera inimigo...",
+      image: "./images/Classicmetalsonic.jpeg",
+      audio: "./Description-Speech/Classicmetalsonic.mp3",
+    },
+    {
+      id: 29,
+      title: "Classic Shadow",
+      description: " as vezes o melhor a se fazer, é se afastar dos outros para que você nunca sofra por causa deles",
+      image: "./images/Classicshadow.jpeg",
+      audio: "./Description-Speech/Classicshadow.mp3",
+    },
+    {
+      id: 30,
+      title: "Kit Doorman",
+      description: "kit vestida de uzi, roupa da protagonista de Murder Drones",
+      image: "./images/Kitdoorman.jpeg",
+      audio: "./Description-Speech/Kitdoorman.mp3",
+    },
+    {
+      id: 31,
+      title: "Sonic Moderno",
+      description: "É apenas o ouriço mais rápido do planeta crescido",
+      image: "./images/Sonicmoderno.jpeg",
+    },
+    {
+      id: 32,
+      title: "Amy Rose",
+      description: "É apenas a Amy Rose Clássica crescida, nada demais.",
+      image: "./images/Amyrose.jpeg",
     },
   ];
 
@@ -427,6 +467,9 @@
   const modalNext       = document.getElementById("modalNext");
   const modalPlayBtn    = document.getElementById("modalPlayBtn");
   const modalDownloadBtn = document.getElementById("modalDownloadBtn");
+  const updatesBtn = document.getElementById("updatesBtn");
+  const updatesModalOverlay = document.getElementById("updatesModalOverlay");
+  const updatesModalClose = document.getElementById("updatesModalClose");
   let audioElement      = null;
 
   const suggestionsDropdown = document.getElementById("suggestionsDropdown");
@@ -910,11 +953,36 @@
 
   modalDownloadBtn.addEventListener("click", downloadImage);
 
+  function openUpdatesModal() {
+    updatesModalOverlay.hidden = false;
+    requestAnimationFrame(() => {
+      updatesModalOverlay.classList.add("open");
+    });
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeUpdatesModal() {
+    updatesModalOverlay.classList.remove("open");
+    document.body.style.overflow = "";
+    setTimeout(() => {
+      updatesModalOverlay.hidden = true;
+    }, 250);
+  }
+
+  updatesBtn.addEventListener("click", openUpdatesModal);
+  updatesModalClose.addEventListener("click", closeUpdatesModal);
+  updatesModalOverlay.addEventListener("click", (e) => {
+    if (e.target === updatesModalOverlay) closeUpdatesModal();
+  });
+
   document.addEventListener("keydown", (e) => {
-    if (modalOverlay.hidden) return;
-    if (e.key === "Escape")     closeModal();
-    if (e.key === "ArrowLeft")  stepModal(-1);
-    if (e.key === "ArrowRight") stepModal(+1);
+    if (!modalOverlay.hidden) {
+      if (e.key === "Escape")     closeModal();
+      if (e.key === "ArrowLeft")  stepModal(-1);
+      if (e.key === "ArrowRight") stepModal(+1);
+    } else if (!updatesModalOverlay.hidden) {
+      if (e.key === "Escape")     closeUpdatesModal();
+    }
   });
 
 

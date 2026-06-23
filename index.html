@@ -79,6 +79,12 @@
         </a>
       </nav>
 
+      <button class="updates-btn" id="updatesBtn" type="button" aria-label="Atualizações">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12,6 12,12 16,14"/>
+        </svg>
+      </button>
       <span class="count-badge" id="resultCount" aria-live="polite">— referências</span>
     </div>
   </header>
@@ -136,6 +142,29 @@
           </div>
         </div>
         <p id="modalDescription"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- UPDATES MODAL -->
+  <div class="modal-overlay" id="updatesModalOverlay" hidden>
+    <div class="modal updates-modal" role="dialog" aria-modal="true" aria-labelledby="updatesTitle">
+      <button class="modal-close" id="updatesModalClose" type="button" aria-label="Fechar">×</button>
+      <div class="modal-info">
+        <h2 id="updatesTitle">Atualizações</h2>
+        <div class="updates-content" id="updatesContent">
+          <!-- Você pode adicionar suas atualizações aqui -->
+          <div class="update-item">
+            <h3>Versão 1.2</h3>
+            <p class="update-date">23/06/2026</p>
+            <ul>
+              <li>Adicionado botão de download de imagens</li>
+              <li>Adicionado botão de reprodução de áudio</li>
+              <li>Adicionado novas referências</li>
+              <li>atualizações Em algumas Referências</li>
+            </ul>
+          </div
+        </div>
       </div>
     </div>
   </div>
