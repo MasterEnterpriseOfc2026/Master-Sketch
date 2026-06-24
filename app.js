@@ -7,22 +7,45 @@
      MELHORIA: dois sinais — tempo mínimo de animação
      (2.8s) E primeiro render da galeria. O loading só
      fecha quando ambos estiverem prontos.
+     ALTERAÇÃO: aparece apenas uma vez por sessão
      ===================================================== */
 
   const loadingScreen = document.getElementById("loading-screen");
+  
+  // Verifica se o usuário já viu a tela de carregamento nesta sessão
+  const hasSeenLoading = sessionStorage.getItem("hasSeenLoading");
+  
+  // Variáveis e funções de loading, definidas independentemente
   let _minAnimDone    = false;
   let _firstRenderDone = false;
 
   function tryHideLoading() {
+    if (!loadingScreen || loadingScreen.classList.contains("hiding")) return;
     if (!_minAnimDone || !_firstRenderDone) return;
     loadingScreen.classList.add("hiding");
     loadingScreen.addEventListener("transitionend", () => {
       loadingScreen.remove();
+      // Marca que o usuário já viu a tela de carregamento
+      sessionStorage.setItem("hasSeenLoading", "true");
     }, { once: true });
   }
 
-  // Sinal 1: tempo mínimo de animação
-  setTimeout(() => { _minAnimDone = true; tryHideLoading(); }, 2800);
+  function signalFirstRender() {
+    if (_firstRenderDone) return;
+    _firstRenderDone = true;
+    tryHideLoading();
+  }
+
+  if (hasSeenLoading) {
+    // Se já viu, remove a tela de carregamento imediatamente
+    if (loadingScreen) {
+      loadingScreen.remove();
+    }
+  } else {
+    // Se não viu, mostra a tela normalmente
+    // Sinal 1: tempo mínimo de animação
+    setTimeout(() => { _minAnimDone = true; tryHideLoading(); }, 2800);
+  }
 
 
   /* =====================================================
@@ -674,12 +697,7 @@
     signalFirstRender();
   }
 
-  /** Sinal 2 do loading: galeria renderizou pela primeira vez */
-  function signalFirstRender() {
-    if (_firstRenderDone) return;
-    _firstRenderDone = true;
-    tryHideLoading();
-  }
+
 
   /**
    * MELHORIA — Skeleton enquanto imagens carregam + fallback se quebrar.

@@ -3,45 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MasterSketch — Referências para Artistas</title>
+  <title>MasterSketch — Poses</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- ======= LOADING SCREEN ======= -->
-  <div id="loading-screen" aria-hidden="true">
-    <div class="pencil-scene">
-
-      <!-- Pencil SVG — desenhado via stroke-dashoffset -->
-      <svg id="pencil-svg" viewBox="0 0 48 164" width="48" height="164" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <!-- Borracha -->
-        <rect class="p-eraser"  x="14" y="4"  width="20" height="18" rx="4"   stroke="rgba(255,255,255,0.7)"  stroke-width="2"/>
-        <!-- Virola -->
-        <rect class="p-ferrule" x="14" y="22" width="20" height="10" rx="1.5" stroke="rgba(255,255,255,0.5)"  stroke-width="2"/>
-        <!-- Corpo -->
-        <rect class="p-body"    x="14" y="32" width="20" height="90"           stroke="white"                  stroke-width="2.2"/>
-        <!-- Linha central (tracejada) -->
-        <line class="p-line"    x1="24" y1="34" x2="24" y2="120"              stroke="rgba(255,255,255,0.18)" stroke-width="1.5" stroke-dasharray="5 4"/>
-        <!-- Cone de madeira -->
-        <path class="p-cone"    d="M14 122 L24 152 L34 122"                    stroke="white"                  stroke-width="2.2"/>
-        <!-- Ponta de grafite -->
-        <circle class="p-tip"   cx="24" cy="152" r="2.2" fill="white" stroke="none"/>
-      </svg>
-
-      <!-- Linha que o lápis "escreve" -->
-      <div class="write-line-wrap" aria-hidden="true">
-        <div class="write-line"></div>
-      </div>
-
-    </div>
-
-    <span class="loading-wordmark">Master<em>Sketch</em></span>
-  </div>
-  <!-- ======= /LOADING SCREEN ======= -->
-
 
   <div class="texture-overlay" aria-hidden="true"></div>
 
@@ -67,7 +35,7 @@
             <rect x="14" y="14" width="7" height="7" rx="1"/>
           </svg>
         </a>
-        <a href="poses.html" class="nav-link" aria-label="Poses">
+        <a href="poses.html" class="nav-link active" aria-label="Poses">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="12" cy="6" r="3"/>
             <path d="M12 9v4"/>
@@ -107,30 +75,28 @@
           <polyline points="12,6 12,12 16,14"/>
         </svg>
       </button>
-      <span class="count-badge" id="resultCount" aria-live="polite">— referências</span>
     </div>
   </header>
 
   <main>
     <!-- HERO -->
-    <section class="hero" id="top">
-      <p class="eyebrow">Catálogo de referências</p>
-      <h1>Bases que sustentam<br><span class="ital">o seu traço.</span></h1>
-      <p class="hero-sub">Uma coleção de modelos, para estudar antes de desenhar — pronta para inspirar.</p>
+    <section class="hero">
+      <p class="eyebrow">Seção de poses</p>
+      <h1>Referências de poses<br><span class="ital">para seus desenhos</span></h1>
+      <p class="hero-sub">Uma coleção de poses para inspirar seu trabalho artístico</p>
     </section>
 
-    <!-- GALERIA -->
-    <section class="gallery-section" aria-label="Galeria de referências">
-      <div class="gallery-grid" id="galleryGrid" role="list"></div>
-      <div class="empty-state" id="emptyState" hidden>
-        <svg viewBox="0 0 240 300" fill="none" stroke="#766c5d" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-          <circle cx="120" cy="108" r="62"/>
-          <path d="M58 108h124M120 46v0"/>
-          <path d="M70 150c8 38 32 60 50 60s42-22 50-60"/>
+    <!-- EMPTY STATE - EM BREVE -->
+    <section class="coming-soon-section">
+      <div class="empty-state">
+        <svg viewBox="0 0 240 300" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="opacity: 0.6; color: var(--text-tertiary);">
+          <path d="M80 80 Q120 60 160 80 Q160 120 120 140 Q80 160 80 200" stroke="currentColor" stroke-width="4"/>
+          <circle cx="90" cy="60" r="15"/>
+          <circle cx="150" cy="60" r="15"/>
+          <path d="M90 220 L70 260 M110 220 L130 260" stroke="currentColor" stroke-width="4"/>
         </svg>
-        <p id="emptyMsg">Nenhuma referência encontrada para essa busca.</p>
-        <div id="emptyRelated" class="empty-related" hidden></div>
-        <button id="clearSearchBtn" type="button">Limpar busca</button>
+        <h2 style="font-family: var(--font-display); font-size: 28px; margin-bottom: 10px;">Em breve!</h2>
+        <p style="font-size: 16px; color: var(--text-secondary);">A seção de poses está sendo preparada. <br>Em breve você terá acesso a várias referências de poses de diferentes personagens.</p>
       </div>
     </section>
   </main>
@@ -140,34 +106,6 @@
     <p>MasterSketch — catálogo de referências para artistas, parte do ecossistema <strong>Master Enterprise</strong>.</p>
   </footer>
 
-  <!-- MODAL -->
-  <div class="modal-overlay" id="modalOverlay" hidden>
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-close" id="modalClose" type="button" aria-label="Fechar">×</button>
-      <button class="modal-nav modal-prev" id="modalPrev" type="button" aria-label="Referência anterior">‹</button>
-      <button class="modal-nav modal-next" id="modalNext" type="button" aria-label="Próxima referência">›</button>
-      <div class="modal-art" id="modalArt"></div>
-      <div class="modal-info">
-        <div class="modal-title-wrap">
-          <h2 id="modalTitle"></h2>
-          <div style="display:flex; gap:8px;">
-            <button class="modal-play-btn" id="modalPlayBtn" type="button" aria-label="Ouvir descrição">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-            </button>
-            <button class="modal-download-btn" id="modalDownloadBtn" type="button" aria-label="Baixar imagem">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-        <p id="modalDescription"></p>
-      </div>
-    </div>
-  </div>
-
   <!-- UPDATES MODAL -->
   <div class="modal-overlay" id="updatesModalOverlay" hidden>
     <div class="modal updates-modal" role="dialog" aria-modal="true" aria-labelledby="updatesTitle">
@@ -175,23 +113,27 @@
       <div class="modal-info">
         <h2 id="updatesTitle">Atualizações</h2>
         <div class="updates-content" id="updatesContent">
-          <!-- Você pode adicionar suas atualizações aqui -->
-          <div class="update-item">
-            <h3>Versão 1.4</h3>
-            <p class="update-date">24/06/2026</p>
-            <ul>
-              <li>Adicionada navegação para seção de poses</li>
-              <li>Criada página de poses</li>
-            </ul>
-          </div>
           <div class="update-item">
             <h3>Versão 1.3</h3>
             <p class="update-date">24/06/2026</p>
             <ul>
+              <li>Adicionado botão de atualizações no header</li>
+              <li>Adicionada página de atualizações</li>
+              <li>Adicionada navegação para seção de poses</li>
+            </ul>
+          </div>
+          <div class="update-item">
+            <h3>Versão 1.2</h3>
+            <p class="update-date">Data da atualização</p>
+            <ul>
               <li>Adicionado botão de download de imagens</li>
-              <li>Adicionado botão de reprodução de áudio</li>
-              <li>Adicionado novas referências</li>
-              <li>Atualizações Em algumas Referências</li>
+            </ul>
+          </div>
+          <div class="update-item">
+            <h3>Versão 1.1</h3>
+            <p class="update-date">Data da atualização</p>
+            <ul>
+              <li>Adicionada função de reprodução de áudio</li>
             </ul>
           </div>
         </div>
@@ -199,43 +141,39 @@
     </div>
   </div>
 
-  <!-- BARRA INFERIOR DE BUSCA -->
-  <div class="bottom-bar" role="search">
-    <div class="bottom-bar-inner">
+  <script>
+    // UPDATES MODAL FUNCTIONALITY
+    const updatesBtn = document.getElementById("updatesBtn");
+    const updatesModalOverlay = document.getElementById("updatesModalOverlay");
+    const updatesModalClose = document.getElementById("updatesModalClose");
 
-      <button class="bottom-icon-btn" id="scrollTopBtn" type="button" aria-label="Voltar ao topo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M12 19V5M5 12l7-7 7 7"/>
-        </svg>
-      </button>
+    function openUpdatesModal() {
+      updatesModalOverlay.hidden = false;
+      requestAnimationFrame(() => {
+        updatesModalOverlay.classList.add("open");
+      });
+      document.body.style.overflow = "hidden";
+    }
 
-      <!-- Wrapper relativo para posicionar o dropdown acima -->
-      <div class="search-wrap">
+    function closeUpdatesModal() {
+      updatesModalOverlay.classList.remove("open");
+      document.body.style.overflow = "";
+      setTimeout(() => {
+        updatesModalOverlay.hidden = true;
+      }, 250);
+    }
 
-        <!-- Dropdown de sugestões (aparece acima do input) -->
-        <div class="suggestions-dropdown" id="suggestionsDropdown" hidden role="listbox" aria-label="Sugestões de busca"></div>
+    updatesBtn.addEventListener("click", openUpdatesModal);
+    updatesModalClose.addEventListener("click", closeUpdatesModal);
+    updatesModalOverlay.addEventListener("click", (e) => {
+      if (e.target === updatesModalOverlay) closeUpdatesModal();
+    });
 
-        <div class="chat-pill">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>
-          </svg>
-          <input
-            type="search"
-            id="searchInput"
-            placeholder="Buscar uma referência…"
-            aria-label="Buscar referências"
-            aria-autocomplete="list"
-            aria-controls="suggestionsDropdown"
-            autocomplete="off"
-            spellcheck="false"
-          >
-          <button class="chat-pill-clear" id="searchClearBtn" type="button" aria-label="Limpar busca">×</button>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <script src="app.js"></script>
+    document.addEventListener("keydown", (e) => {
+      if (!updatesModalOverlay.hidden) {
+        if (e.key === "Escape") closeUpdatesModal();
+      }
+    });
+  </script>
 </body>
 </html>
