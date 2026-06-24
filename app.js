@@ -41,7 +41,7 @@
       id: 1,
       title: "CowKit",
       description: "Kit está com roupa de CowGirl pronta para qualquer aventura no deserto!!!",
-      image: "./images/Cowkit.jpg",
+      image: "./images/Cowkit.jpeg",
       audio: "./Description-Speech/Cowgirl.mp3",
     },
     {
@@ -62,7 +62,7 @@
       id: 4,
       title: "Farm Kit",
       description: "kit com roupa de fazendeira ótima para ocasiões especiais",
-      image: "./images/farm-kit.png",
+      image: "./images/farma-aura-kit.png",
       audio: "./Description-Speech/Farmkit.mp3",
     },
     {
@@ -258,6 +258,13 @@
       title: "Amy Rose",
       description: "É apenas a Amy Rose Clássica crescida, nada demais.",
       image: "./images/Amyrose.jpeg",
+    },
+    {
+      id: 33,
+      title: "Bride Kit",
+      description: "não acredito!!!, kit vai se casar!?, ninguém me havia dito algo sobre isso antes. é.. o jeito é só aceitar mesmo.",
+      image: "./images/Bride-kit.jpeg",
+      audio: "./Description-Speech/Bride-kit.mp3",
     },
   ];
 
