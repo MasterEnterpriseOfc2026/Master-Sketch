@@ -289,7 +289,49 @@
       image: "./images/Bride-kit.jpeg",
       audio: "./Description-Speech/Bride-kit.mp3",
     },
-  ];
+    {
+      id: 34,
+      title: "Ben10 Kit",
+      description: "Kit ???????????????????????????????",
+      image: "./images/Ben10-kit.jpeg",
+    },
+    {
+      id: 35,
+      title: "Super Kit",
+      description: "A super kit está pronta pra uma nova aventura!!!",
+      image: "./images/Super-kit.jpeg",
+    },
+    {
+      id: 36,
+      title: "Lulit",
+      description: "kit vestida de sua melhor amiga, Lulu",
+      image: "./images/LULU-kit.jpeg",
+    },
+    {
+      id: 37,
+      title: "Peach Kit",
+      description: "Apenas uma outra linda princesa muito charmosa",
+      image: "./images/Peach-kit.jpeg",
+    },
+    {
+      id: 38,
+      title: "Hatsuni Kit",
+      description: "Kit usando sua roupa da hatsuni Miku",
+      image: "./images/Hatsuni-Kit.jpeg",
+    },
+    {
+      id: 39,
+      title: "Pikit",
+      description: "pika pika!!!, chuuuuuuuuuuuuuuuu!!!",
+      image: "./images/pikit.jpeg",
+    },
+    {
+      id: 40,
+      title: "Cyn Kit",
+      description: "Kit usando a roupa da Cyn antes de sua bizarra 'transformação'",
+      image: "./images/cynkit.jpeg",
+    },
+   ];
 
 
   /* =====================================================
